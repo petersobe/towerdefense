@@ -19,9 +19,19 @@ public class Enemy extends Actor
         */
         // Add your action code here.
         this.move(2); 
+        
         if (this.isAtEdge())
         {
             this.turn(180);
+        }
+        
+        if (this.isTouching(Direction.class)
+        {
+            this.rotate(90);
+        }
+        if (this.isTouching(Orb.class)
+        {
+            this.rotate(-90);
         }
     
     }
