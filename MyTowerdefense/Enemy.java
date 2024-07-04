@@ -18,21 +18,31 @@ public class Enemy extends Actor
            enemy move 2 steps rightwards
         */
         // Add your action code here.
-        this.move(2); 
+        this.move(1); 
         
         if (this.isAtEdge())
         {
             this.turn(180);
         }
         
+        
+        
         if (this.isTouching(Direction.class))
         {
-            this.turn(90);
+            Direction direction = (Direction) this.getOneIntersectingObject(Direction.class); 
+            if (direction !=null)
+            {
+              int rotation = direction.getRotation();
+              this.setRotation(rotation);
+            }
         }
-        if (this.isTouching(Orb.class))
+        else 
         {
-            this.turn(-90);
-        }
+            if (this.isTouching(Orb.class))
+            {
+                this.turn(-90);
+            }
+        }    
     
     }
 }
