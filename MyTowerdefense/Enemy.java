@@ -25,11 +25,11 @@ public class Enemy extends Actor
             this.turn(180);
         }
         
-        if (this.isTouching(Direction.class)
+        if (this.isTouching(Direction.class))
         {
-            this.rotate(90);
+            this
         }
-        if (this.isTouching(Orb.class)
+        if (this.isTouching(Orb.class))
         {
             this.rotate(-90);
         }
